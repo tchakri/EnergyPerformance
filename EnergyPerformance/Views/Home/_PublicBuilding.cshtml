@@ -1,0 +1,29 @@
+﻿@model EnergyPerformance.Models.HomeViewModel
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Address</th>
+            <th scope="col">Post Town</th>
+            <th scope="col">Local Authority</th>
+            <th scope="col">Post code</th>
+            <th scope="col">Building Form</th>
+            <th scope="col">Property Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model.PublicBuildings.Select((v, i) => new { index = i + 1, v }))
+        {
+            <tr>
+                <th scope="row">@d.index</th>
+                <td>@d.v.address</td>
+                <td>@d.v.postTown</td>
+                <td>@d.v.localAuthorityLabel</td>
+                <td>@d.v.postcode</td>
+                <td>@d.v.builtForm</td>
+                <td>@d.v.propertyType</td>
+            </tr>
+        }
+    </tbody>
+</table>
