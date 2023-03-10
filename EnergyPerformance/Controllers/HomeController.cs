@@ -52,6 +52,29 @@ namespace EnergyPerformance.Controllers
             return PartialView("_PublicBuilding", model);
         }
 
+        [HttpGet]
+        public async Task<PartialViewResult> ViewData([FromQuery] string key)
+        {
+            var data = await CallAPI($"https://epc.opendatacommunities.org/api/v1/domestic/certificate/{key}");
+            var obj = JsonConvert.DeserializeObject<ResponseData<PublicBuilding>>(data);
+
+            return PartialView("_PublicBuildingView", obj.Rows.First());
+        }
+
+        [HttpGet]
+        public async Task<PartialViewResult> ViewRecommendation([FromQuery] string key)
+        {
+            var data = await CallAPI($"https://epc.opendatacommunities.org/api/v1/domestic/recommendations/{key}");
+            var obj = JsonConvert.DeserializeObject<ResponseData<Recommendation>>(data);
+
+            return PartialView("_RecommendationView", obj.Rows);
+        }
+
+        public async Task<IActionResult> Recommendations()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

@@ -4,37 +4,97 @@ namespace EnergyPerformance.Models
 {
     public class PublicBuilding
     {
-        [JsonProperty(PropertyName = "lmk-key")]
-        public string LmkKey { get; set; }
-        public string address1 { get; set; }
-        public string address2 { get; set; }
-        public string address3 { get; set; }
-        public string postcode { get; set; }
-        [JsonProperty(PropertyName = "building-reference-number")]
-        public string buildingReferenceNumber { get; set; }
-        [JsonProperty(PropertyName = "current-energy-rating")]
-        public string currentEnergyRating { get; set; }
-        [JsonProperty(PropertyName = "potential-energy-rating")]
-        public string potentialEnergyRating { get; set; }
-        [JsonProperty(PropertyName = "current-energy-efficiency")]
-        public string currentEnergyEfficiency { get; set; }
-        [JsonProperty(PropertyName = "potential-energy-efficiency")]
-        public string potentialEnergyEfficiency { get; set; }
-        [JsonProperty(PropertyName = "property-type")]
-        public string propertyType { get; set; }
-        [JsonProperty(PropertyName = "built-form")]
-        public string builtForm { get; set; }
-        [JsonProperty(PropertyName = "inspection-date")]
-        public DateTime inspectionDate { get; set; }
-        public string constituency { get; set; }
-        public string county { get; set; }
-        [JsonProperty(PropertyName = "lodgement-date")]
-        public DateTime lodgementDate { get; set; }
-        public string address { get; set; }
-        public string postTown { get; set; }
-        [JsonProperty(PropertyName = "local-authority")]
-        public string localAuthority { get; set; }
-        [JsonProperty(PropertyName = "local-authority-label")]
-        public string localAuthorityLabel { get; set; }
+        [JsonProperty(PropertyName = "lmk-key")] public string LmkKey { get; set; }
+        [JsonProperty(PropertyName = "address1")] public string Address1 { get; set; }
+        [JsonProperty(PropertyName = "address2")] public string Address2 { get; set; }
+        [JsonProperty(PropertyName = "address3")] public string Address3 { get; set; }
+        [JsonProperty(PropertyName = "postcode")] public string PostCode { get; set; }
+        [JsonProperty(PropertyName = "building-reference-number")] public string BuildingReferenceNumber { get; set; }
+        [JsonProperty(PropertyName = "current-energy-rating")] public string CurrentEnergyRating { get; set; }
+        [JsonProperty(PropertyName = "potential-energy-rating")] public string PotentialEnergyRating { get; set; }
+        [JsonProperty(PropertyName = "current-energy-efficiency")] public string CurrentEnergyEfficiency { get; set; }
+        [JsonProperty(PropertyName = "potential-energy-efficiency")] public string PotentialEnergyEfficiency { get; set; }
+        [JsonProperty(PropertyName = "property-type")] public string PropertyType { get; set; }
+        [JsonProperty(PropertyName = "built-form")] public string BuiltForm { get; set; }
+        [JsonProperty(PropertyName = "inspection-date")] public string InspectionDate { get; set; }
+        [JsonProperty(PropertyName = "local-authority")] public string LocalAuthority { get; set; }
+        [JsonProperty(PropertyName = "constituency")] public string Constituency { get; set; }
+        [JsonProperty(PropertyName = "county")] public string County { get; set; }
+        [JsonProperty(PropertyName = "lodgement-date")] public string LodgementDate { get; set; }
+        [JsonProperty(PropertyName = "transaction-type")] public string TransactionType { get; set; }
+        [JsonProperty(PropertyName = "environment-impact-current")] public string EnvironmentImpactCurrent { get; set; }
+        [JsonProperty(PropertyName = "environment-impact-potential")] public string EnvironmentImpactPotential { get; set; }
+        [JsonProperty(PropertyName = "energy-consumption-current")] public string EnergyConsumptionCurrent { get; set; }
+        [JsonProperty(PropertyName = "energy-consumption-potential")] public string EnergyConsumptionPotential { get; set; }
+        [JsonProperty(PropertyName = "co2-emissions-current")] public string Co2EmissionsCurrent { get; set; }
+        [JsonProperty(PropertyName = "co2-emiss-curr-per-floor-area")] public string Co2EmissCurrPerFloorArea { get; set; }
+        [JsonProperty(PropertyName = "co2-emissions-potential")] public string Co2EmissionsPotential { get; set; }
+        [JsonProperty(PropertyName = "lighting-cost-current")] public string LightingCostCurrent { get; set; }
+        [JsonProperty(PropertyName = "lighting-cost-potential")] public string LightingCostPotential { get; set; }
+        [JsonProperty(PropertyName = "heating-cost-current")] public string HeatingCostCurrent { get; set; }
+        [JsonProperty(PropertyName = "heating-cost-potential")] public string HeatingCostPotential { get; set; }
+        [JsonProperty(PropertyName = "hot-water-cost-current")] public string HotWaterCostCurrent { get; set; }
+        [JsonProperty(PropertyName = "hot-water-cost-potential")] public string HotWaterCostPotential { get; set; }
+        [JsonProperty(PropertyName = "total-floor-area")] public string TotalFloorArea { get; set; }
+        [JsonProperty(PropertyName = "energy-tariff")] public string EnergyTariff { get; set; }
+        [JsonProperty(PropertyName = "mains-gas-flag")] public string MainsGasFlag { get; set; }
+        [JsonProperty(PropertyName = "floor-level")] public string FloorLevel { get; set; }
+        [JsonProperty(PropertyName = "flat-top-storey")] public string FlatTopStorey { get; set; }
+        [JsonProperty(PropertyName = "flat-storey-count")] public string FlatStoreyCount { get; set; }
+        [JsonProperty(PropertyName = "main-heating-controls")] public string MainHeatingControls { get; set; }
+        [JsonProperty(PropertyName = "multi-glaze-proportion")] public string MultiGlazeProportion { get; set; }
+        [JsonProperty(PropertyName = "glazed-type")] public string GlazedType { get; set; }
+        [JsonProperty(PropertyName = "glazed-area")] public string GlazedArea { get; set; }
+        [JsonProperty(PropertyName = "extension-count")] public string ExtensionCount { get; set; }
+        [JsonProperty(PropertyName = "number-habitable-rooms")] public string NumberHabitableRooms { get; set; }
+        [JsonProperty(PropertyName = "number-heated-rooms")] public string NumberHeatedRooms { get; set; }
+        [JsonProperty(PropertyName = "low-energy-lighting")] public string LowEnergyLighting { get; set; }
+        [JsonProperty(PropertyName = "number-open-fireplaces")] public string NumberOpenFireplaces { get; set; }
+        [JsonProperty(PropertyName = "hotwater-description")] public string HotwaterDescription { get; set; }
+        [JsonProperty(PropertyName = "hot-water-energy-eff")] public string HotWaterEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "hot-water-env-eff")] public string HotWaterEnvEff { get; set; }
+        [JsonProperty(PropertyName = "floor-description")] public string FloorDescription { get; set; }
+        [JsonProperty(PropertyName = "floor-energy-eff")] public string FloorEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "floor-env-eff")] public string FloorEnvEff { get; set; }
+        [JsonProperty(PropertyName = "windows-description")] public string WindowsDescription { get; set; }
+        [JsonProperty(PropertyName = "windows-energy-eff")] public string WindowsEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "windows-env-eff")] public string WindowsEnvEff { get; set; }
+        [JsonProperty(PropertyName = "walls-description")] public string WallsDescription { get; set; }
+        [JsonProperty(PropertyName = "walls-energy-eff")] public string WallsEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "walls-env-eff")] public string WallsEnvEff { get; set; }
+        [JsonProperty(PropertyName = "secondheat-description")] public string SecondheatDescription { get; set; }
+        [JsonProperty(PropertyName = "sheating-energy-eff")] public string SheatingEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "sheating-env-eff")] public string SheatingEnvEff { get; set; }
+        [JsonProperty(PropertyName = "roof-description")] public string RoofDescription { get; set; }
+        [JsonProperty(PropertyName = "roof-energy-eff")] public string RoofEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "roof-env-eff")] public string RoofEnvEff { get; set; }
+        [JsonProperty(PropertyName = "mainheat-description")] public string MainheatDescription { get; set; }
+        [JsonProperty(PropertyName = "mainheat-energy-eff")] public string MainheatEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "mainheat-env-eff")] public string MainheatEnvEff { get; set; }
+        [JsonProperty(PropertyName = "mainheatcont-description")] public string MainheatcontDescription { get; set; }
+        [JsonProperty(PropertyName = "mainheatc-energy-eff")] public string MainheatcEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "mainheatc-env-eff")] public string MainheatcEnvEff { get; set; }
+        [JsonProperty(PropertyName = "lighting-description")] public string LightingDescription { get; set; }
+        [JsonProperty(PropertyName = "lighting-energy-eff")] public string LightingEnergyEff { get; set; }
+        [JsonProperty(PropertyName = "lighting-env-eff")] public string LightingEnvEff { get; set; }
+        [JsonProperty(PropertyName = "main-fuel")] public string MainFuel { get; set; }
+        [JsonProperty(PropertyName = "wind-turbine-count")] public string WindTurbineCount { get; set; }
+        [JsonProperty(PropertyName = "heat-loss-corridor")] public string HeatLossCorridor { get; set; }
+        [JsonProperty(PropertyName = "unheated-corridor-length")] public string UnheatedCorridorLength { get; set; }
+        [JsonProperty(PropertyName = "floor-height")] public string FloorHeight { get; set; }
+        [JsonProperty(PropertyName = "photo-supply")] public string PhotoSupply { get; set; }
+        [JsonProperty(PropertyName = "solar-water-heating-flag")] public string SolarWaterHeatingFlag { get; set; }
+        [JsonProperty(PropertyName = "mechanical-ventilation")] public string MechanicalVentilation { get; set; }
+        [JsonProperty(PropertyName = "address")] public string Address { get; set; }
+        [JsonProperty(PropertyName = "local-authority-label")] public string LocalAuthorityLabel { get; set; }
+        [JsonProperty(PropertyName = "constituency-label")] public string ConstituencyLabel { get; set; }
+        [JsonProperty(PropertyName = "posttown")] public string PostTown { get; set; }
+        [JsonProperty(PropertyName = "construction-age-band")] public string ConstructionAgeBand { get; set; }
+        [JsonProperty(PropertyName = "lodgement-datetime")] public string LodgementDatetime { get; set; }
+        [JsonProperty(PropertyName = "tenure")] public string Tenure { get; set; }
+        [JsonProperty(PropertyName = "fixed-lighting-outlets-count")] public string FixedLightingOutletsCount { get; set; }
+        [JsonProperty(PropertyName = "low-energy-fixed-light-count")] public string LowEnergyFixedLightCount { get; set; }
+        [JsonProperty(PropertyName = "uprn")] public string Uprn { get; set; }
+        [JsonProperty(PropertyName = "uprn-source")] public string UprnSource { get; set; }
     }
 }

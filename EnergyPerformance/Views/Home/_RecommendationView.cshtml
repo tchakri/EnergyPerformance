@@ -1,0 +1,25 @@
+﻿@model IEnumerable<EnergyPerformance.Models.Recommendation>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Improvement Item</th>
+            <th scope="col">Improvement ID</th>
+            <th scope="col">Improvement ID Text</th>
+            <th scope="col">Indicative Cost</th>
+            <th scope="col">Improvement Summary Text</th>
+            <th scope="col">Improvement Description Text</th>
+        </tr>
+        @foreach (var row in Model)
+        {
+            <tr>
+                <td>@row.ImprovementItem</td>
+                <td>@row.ImprovementId</td>
+                <td>@row.ImprovementIdText</td>
+                <td>@row.IndicativeCost</td>
+                <td>@row.ImprovementSummaryText</td>
+                <td>@row.ImprovementDescrText</td>
+            </tr>
+        }
+    </thead>
+</table>

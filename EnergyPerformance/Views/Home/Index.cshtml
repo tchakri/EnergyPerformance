@@ -42,6 +42,22 @@
             <button type="button" class="btn btn-outline-primary" id="btnNext">Next</button>
         </div>
     </div>
+    <div id="viewDataModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="max-width: 90%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @section scripts {
     <script>
@@ -124,6 +140,44 @@
                 $("#btnPrevious").addClass("disabled");
             }
             $("#btnCurrent").text("Page: " + currentPage);
+        }
+
+        function onViewDetails(key) {
+            console.log(key);
+            $.ajax({
+                type: "GET",
+                url: "/Home/ViewData",
+                data: { key: key},
+                success: function (response) {
+                    $("#viewDataModal").find(".modal-body").html(response);
+                    $("#viewDataModal").modal('show');
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+
+        function onViewRecommendations(key) {
+            console.log(key);
+            $.ajax({
+                type: "GET",
+                url: "/Home/ViewRecommendation",
+                data: { key: key },
+                success: function (response) {
+                    $("#viewDataModal").find(".modal-body").html(response);
+                    $("#viewDataModal").modal('show');
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
         }
     </script>
 }

@@ -1,0 +1,17 @@
+﻿@model EnergyPerformance.Models.PublicBuilding
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Value</th>
+        </tr>
+        @foreach (var prop in Model.GetType().GetProperties())
+        {
+            <tr>
+                <td>@prop.Name</td>
+                <td>@prop.GetValue(Model, null)</td>
+            </tr>
+        }
+    </thead>
+</table>

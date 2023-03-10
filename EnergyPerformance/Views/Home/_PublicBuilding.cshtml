@@ -1,6 +1,6 @@
 ﻿@model EnergyPerformance.Models.HomeViewModel
 
-<table class="table table-striped">
+<table class="table table-striped" id="tblPublicBuilding">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -10,6 +10,8 @@
             <th scope="col">Post code</th>
             <th scope="col">Building Form</th>
             <th scope="col">Property Type</th>
+            <th scopr="col"></th>
+            <th scopr="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -17,12 +19,14 @@
         {
             <tr>
                 <th scope="row">@d.index</th>
-                <td>@d.v.address</td>
-                <td>@d.v.postTown</td>
-                <td>@d.v.localAuthorityLabel</td>
-                <td>@d.v.postcode</td>
-                <td>@d.v.builtForm</td>
-                <td>@d.v.propertyType</td>
+                <td>@d.v.Address</td>
+                <td>@d.v.PostTown</td>
+                <td>@d.v.LocalAuthorityLabel</td>
+                <td>@d.v.PostCode</td>
+                <td>@d.v.BuiltForm</td>
+                <td>@d.v.PropertyType</td>
+                <td><button type="button" class="btn btn-primary" onClick="onViewDetails('@d.v.LmkKey')">View</button></td>
+                <td><button type="button" class="btn btn-primary" onClick="onViewRecommendations('@d.v.LmkKey')">Recommendation</button></td>
             </tr>
         }
     </tbody>
